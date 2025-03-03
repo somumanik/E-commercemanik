@@ -24,7 +24,7 @@ let getCategory = async () => {
     // let li = `<ul>`;
     let li = '';
     fectRes.forEach(element => {
-        li = li + `<li onclick ="getProduct('${element['slug']}')"><a href="#" style= "text-decoration : none">${element['slug']}</a> </li>`
+        li = li + `<li onclick ="getProduct('${element['slug']}')"><a href="#" style= "text-decoration : none">${element['name']}</a> </li>`
         // console.log(element.name)
     });
 
@@ -41,7 +41,8 @@ let productOuter = document.querySelector('#productOuter')
 let getProduct = async (catname = '') => {
     productOuter.innerHTML = ''
     let apiUrl;
-    if (catname === '') {
+    if (catname === '')  
+    {
         apiUrl = (`https://dummyjson.com/products`)
     }
     else {
@@ -62,7 +63,7 @@ let getProduct = async (catname = '') => {
         products.forEach((items, index) => {
         console.log(items)
         divInnerData += `  <div class="productInner">
-                                <img src="${items.images[0]}" width ='100' height = "240px" alt="">
+                                <img src="${items.thumbnail}" width ='100' height = "240px" alt="">
                                 <div class="product_body">
                                     <h4>${items.title} | Rs ${items.price}</h4>
                                     <h5>Brand -- ${items.brand}</h5>
