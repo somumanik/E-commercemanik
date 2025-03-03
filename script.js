@@ -17,14 +17,14 @@ let getCategory = async () => {
     divUl.innerHTML = '';
     let fectCategory = await fetch('https://dummyjson.com/products/categories');
     let fectRes = await fectCategory.json();
-    let {name} = fectRes
+    let {slug} = fectRes
     // console.log(fectRes)
 
 
     // let li = `<ul>`;
     let li = '';
     fectRes.forEach(element => {
-        li = li + `<li onclick ="getProduct('${element['name']}')"><a href="#" style= "text-decoration : none">${element['name']}</a> </li>`
+        li = li + `<li onclick ="getProduct('${element['slug']}')"><a href="#" style= "text-decoration : none">${element['slug']}</a> </li>`
         // console.log(element.name)
     });
 
