@@ -72,4 +72,65 @@ header {
 .product_body h4, .product_body h5 {
   text-align: center;
   padding-bottom: 5px;
+}
+
+.preloader {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+}
+
+.area {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+}
+
+.box {
+  width: 120px;
+  height: 120px;
+  background: #3ad4e9;
+  transition: 0.5s;
+  animation: box 0.8s 0s infinite linear;
+}
+
+@keyframes box {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(22.5deg);
+  }
+  50% {
+    transform: translateY(25px) scale(1, 0.9) rotate(45deg);
+    border-bottom-right-radius: 30px;
+  }
+  75% {
+    transform: rotate(67.5deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+.shadow {
+  width: 150px;
+  height: 10px;
+  background: lightgreen;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: shadow 2s 0s infinite linear;
+}
+
+@keyframes shadow {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.2, 1);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
 }/*# sourceMappingURL=style.css.map */

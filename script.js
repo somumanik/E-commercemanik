@@ -17,7 +17,7 @@ let getCategory = async () => {
     divUl.innerHTML = '';
     let fectCategory = await fetch('https://dummyjson.com/products/categories');
     let fectRes = await fectCategory.json();
-    let {slug} = fectRes
+    let { slug } = fectRes
     // console.log(fectRes)
 
 
@@ -39,10 +39,12 @@ getCategory()
 let productOuter = document.querySelector('#productOuter')
 
 let getProduct = async (catname = '') => {
-    productOuter.innerHTML = ''
+    productOuter.innerHTML = `<div class="area">
+                                <div class="box"></div>
+                                <div class="shadow"></div>
+                            </div>`
     let apiUrl;
-    if (catname === '')  
-    {
+    if (catname === '') {
         apiUrl = (`https://dummyjson.com/products`)
     }
     else {
@@ -50,17 +52,17 @@ let getProduct = async (catname = '') => {
 
     }
 
-   
+
     let fecthData = await fetch(apiUrl);
     let res = await fecthData.json()
 
     // console.log(apiUrl)
     // console.log(res)
-    let {products} = res
-    
+    let { products } = res
+
     let divInnerData = '';
 
-        products.forEach((items, index) => {
+    products.forEach((items, index) => {
         console.log(items)
         divInnerData += `  <div class="productInner">
                                 <img src="${items.thumbnail}" width ='100' height = "240px" alt="">
